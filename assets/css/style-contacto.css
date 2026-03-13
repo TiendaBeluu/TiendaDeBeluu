@@ -1,0 +1,598 @@
+/* =============================================
+   TIENDA DE BELU — CONTACTO.CSS
+   Estilos exclusivos para contacto.html
+   Requiere: general.css + Bootstrap
+   ============================================= */
+
+/* ============================================
+   1. HERO DE CONTACTO
+   ============================================ */
+
+.ct-hero {
+  position: relative;
+  padding: 7rem 0 5rem;
+  overflow: hidden;
+  background: var(--blanco);
+}
+
+/* Fondo decorativo con blob rosa */
+.ct-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -180px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,173,213,0.28) 0%, rgba(255,173,213,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ct-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(192,66,122,0.10) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ct-hero .container { position: relative; z-index: 1; }
+
+/* ── Eyebrow del hero ──
+   Estilos visuales locales; font-size y letter-spacing vienen de general.css */
+.ct-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* font-size: var(--typo-label-size) — heredado de general.css */
+  font-weight: 400;
+  color: var(--rosa-deep);
+  margin-bottom: 1.2rem;
+}
+.ct-hero-label::before,
+.ct-hero-label::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--rosa-claro);
+  border-radius: 2px;
+}
+
+/* ── H1 del hero de Contacto ──
+   Alta especificidad para ganar a Bootstrap */
+.ct-hero .ct-hero-title,
+.ct-hero-title {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;            /* elegante, NO bold — igual que acerca y catálogo */
+  line-height: 1.1;
+  color: var(--negro);
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+/* El span con gradiente de color — decorativo, no tipográfico */
+.ct-hero-title span {
+  background: linear-gradient(120deg, var(--rosa-fuerte) 0%, var(--rosa-deep) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtítulo del hero ──
+   font-size: 1rem desde general.css */
+.ct-hero-sub {
+  /* font-size y line-height heredados de general.css */
+  color: #888;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* Decoración derecha del hero */
+.ct-hero-deco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.ct-hero-deco-ring {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+.ct-hero-deco-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--rosa-fuerte) 100%);
+  opacity: 0.14;
+}
+
+.ct-hero-deco-ring::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 2px dashed rgba(192,66,122,0.25);
+  animation: ctSpin 18s linear infinite;
+}
+
+@keyframes ctSpin {
+  to { transform: rotate(360deg); }
+}
+
+.ct-hero-deco-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--rosa-fuerte);
+  opacity: 0.6;
+}
+
+/* Divisor ondulado al final del hero */
+.ct-hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+.ct-hero-wave svg { display: block; width: 100%; height: 60px; }
+
+/* ============================================
+   2. MÉTODOS DE CONTACTO
+   ============================================ */
+
+.ct-medios {
+  padding: 5rem 0 4rem;
+  background: var(--gris-suave);
+  position: relative;
+}
+
+.ct-medios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 991px) {
+  .ct-medios-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+  .ct-medios-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* Canal individual */
+.ct-canal {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  background: var(--blanco);
+  border-radius: 16px;
+  border: 1.5px solid var(--gris-borde);
+  text-decoration: none !important;
+  color: var(--negro) !important;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.ct-canal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,173,213,0.08) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: inherit;
+}
+
+.ct-canal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--sombra-rosa);
+  border-color: var(--rosa-claro);
+  color: var(--negro) !important;
+}
+.ct-canal:hover::before { opacity: 1; }
+
+/* Icono del canal */
+.ct-canal-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.ct-canal:hover .ct-canal-icon { transform: scale(1.1) rotate(-4deg); }
+
+.ct-icon-wa      { background: linear-gradient(135deg, #25D366, #128C7E); }
+.ct-icon-fb      { background: linear-gradient(135deg, #1877F2, #0050a0); }
+.ct-icon-ig      { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.ct-icon-tiktok  { background: linear-gradient(135deg, #010101, #69C9D0); }
+.ct-icon-email   { background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa-deep)); }
+.ct-icon-phone   { background: linear-gradient(135deg, #6c3f8e, #a45bc0); }
+
+.ct-canal-info { flex: 1; min-width: 0; }
+
+/* Etiqueta del canal — microetiqueta, mismo sistema que .v2-section-label */
+.ct-canal-name {
+  font-size: var(--typo-label-size);   /* 0.72rem */
+  font-weight: 400;
+  letter-spacing: var(--typo-label-spacing);  /* 0.22em */
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-main);
+}
+
+/* Valor del canal — tamaño párrafo base */
+.ct-canal-value {
+  font-size: var(--typo-p-size);   /* 1rem */
+  font-weight: 700;
+  color: var(--negro);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-main);
+}
+
+.ct-canal-arrow {
+  font-size: 0.8rem;
+  color: var(--rosa-claro);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all var(--transition);
+}
+.ct-canal:hover .ct-canal-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   3. SECCIÓN UBICACIÓN
+   ============================================ */
+
+.ct-ubicacion {
+  padding: 5rem 0;
+  background: var(--blanco);
+}
+
+.ct-ubicacion-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+@media (max-width: 991px) {
+  .ct-ubicacion-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.ct-info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--gris-borde);
+}
+.ct-info-block:last-child { border-bottom: none; }
+
+.ct-info-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--rosa-claro), var(--rosa-fuerte));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Microetiqueta de info — mismo sistema que .v2-section-label */
+.ct-info-label {
+  font-size: var(--typo-label-size);   /* 0.72rem — unificado desde 0.68rem */
+  font-weight: 400;
+  letter-spacing: var(--typo-label-spacing);  /* 0.22em */
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-main);
+}
+
+.ct-info-value {
+  font-size: var(--typo-p-size);   /* 1rem */
+  font-weight: 600;
+  color: var(--negro);
+  line-height: 1.55;
+  font-family: var(--font-main);
+}
+.ct-info-value a {
+  color: var(--negro);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.ct-info-value a:hover { color: var(--rosa-deep); }
+
+.ct-map-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(192,66,122,0.14);
+  border: 2px solid var(--gris-borde);
+  transition: box-shadow var(--transition);
+  height: 400px;
+}
+.ct-map-wrapper:hover {
+  box-shadow: 0 20px 60px rgba(192,66,122,0.2);
+}
+.ct-map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ============================================
+   4. FORMULARIO DE CONTACTO
+   ============================================ */
+
+.ct-form-section {
+  padding: 5rem 0 6rem;
+  background: var(--gris-suave);
+  position: relative;
+  overflow: hidden;
+}
+
+.ct-form-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,173,213,0.18) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ct-form-wrap {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  background: var(--blanco);
+  border-radius: 24px;
+  padding: 3rem 3rem 2.5rem;
+  box-shadow: 0 12px 48px rgba(192,66,122,0.10);
+  border: 1.5px solid var(--gris-borde);
+  position: relative;
+  z-index: 1;
+}
+
+.ct-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  right: 2.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rosa-claro), var(--rosa-fuerte), var(--rosa-deep));
+  border-radius: 0 0 4px 4px;
+}
+
+.ct-field-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Etiqueta del formulario — mismo sistema que microetiquetas del sitio */
+.ct-label {
+  display: block;
+  font-size: var(--typo-label-size);   /* 0.72rem */
+  font-weight: 400;
+  letter-spacing: var(--typo-label-spacing);  /* 0.22em */
+  text-transform: uppercase;
+  color: var(--rosa-text);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-main);
+}
+
+.ct-input,
+.ct-textarea {
+  width: 100%;
+  border: 1.5px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-main);
+  font-size: var(--typo-p-size);   /* 1rem */
+  color: var(--negro);
+  background: var(--blanco);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+}
+.ct-input:focus,
+.ct-textarea:focus {
+  border-color: var(--rosa-fuerte);
+  box-shadow: 0 0 0 3px rgba(224,112,159,0.14);
+}
+.ct-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.ct-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+@media (max-width: 575px) {
+  .ct-form-row { grid-template-columns: 1fr; }
+  .ct-form-wrap { padding: 2.2rem 1.5rem; }
+}
+
+.ct-btn-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--rosa-fuerte) 0%, var(--rosa-deep) 100%);
+  color: #fff !important;
+  text-decoration: none;
+  font-size: var(--typo-p-size);   /* 1rem — consistente con botones del sitio */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(192,66,122,0.35);
+  transition: all var(--transition);
+  margin-top: 0.5rem;
+  font-family: var(--font-main);
+}
+.ct-btn-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(192,66,122,0.45);
+  background: linear-gradient(135deg, var(--rosa-deep) 0%, #a0305e 100%);
+}
+.ct-btn-send:active { transform: translateY(0); }
+
+.ct-form-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #bbb;
+  margin-top: 1.2rem;
+  font-family: var(--font-main);
+}
+.ct-form-note i { color: var(--rosa-claro); margin-right: 0.3rem; }
+
+/* ============================================
+   ANIMACIONES DE ENTRADA (scroll fade)
+   ============================================ */
+
+.ct-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1);
+}
+.ct-fade-up.ct-visible { opacity: 1; transform: translateY(0); }
+
+.ct-delay-1 { transition-delay: 0.08s; }
+.ct-delay-2 { transition-delay: 0.16s; }
+.ct-delay-3 { transition-delay: 0.24s; }
+.ct-delay-4 { transition-delay: 0.32s; }
+.ct-delay-5 { transition-delay: 0.40s; }
+.ct-delay-6 { transition-delay: 0.48s; }
+
+/* ============================================
+   ESTADOS DE VALIDACIÓN DEL FORMULARIO
+   ============================================ */
+
+.ct-input--error,
+.ct-textarea.ct-input--error {
+  border-color: #e05555 !important;
+  box-shadow: 0 0 0 3px rgba(224, 85, 85, 0.15);
+}
+
+.ct-field-error {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: #e05555;
+  font-family: var(--font-main);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   MENSAJE DE ÉXITO
+   ============================================ */
+
+.ct-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3.5rem 2rem;
+  gap: 1rem;
+}
+
+.ct-success__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #1aad52 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  animation: ct-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes ct-pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.ct-success__title {
+  font-family: var(--font-main);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 400;
+  color: var(--negro);
+  margin: 0;
+}
+
+.ct-success__text {
+  font-size: 1rem;
+  color: #888;
+  max-width: 380px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ct-success__back {
+  margin-top: 0.5rem;
+  background: none;
+  border: 1.5px solid var(--gris-borde);
+  border-radius: 50px;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ct-success__back:hover {
+  border-color: var(--rosa-medio);
+  color: var(--rosa-deep);
+}

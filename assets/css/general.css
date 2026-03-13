@@ -1,0 +1,652 @@
+/* =============================================
+   TIENDA DE BELU — GENERAL V2
+   Estilos compartidos: Navbar, Footer, Utilidades
+   Se aplica a TODAS las páginas del sitio
+   ============================================= */
+
+/* ============================================
+   TIPOGRAFÍA — DM SERIF DISPLAY (Google Fonts)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ── VARIABLES GLOBALES ── */
+:root {
+  --rosa-claro:   #FFADD5;
+  --rosa-medio:   #f090be;
+  --rosa-fuerte:  #e0709f;
+  --rosa-deep:    #c0427a;
+  --rosa-text:    #8b2252;
+  --negro:        #1a1a1a;
+  --gris-suave:   #f8f4f6;
+  --gris-borde:   #f0e0ea;
+  --blanco:       #ffffff;
+  --verde-wa:     #25D366;
+  --sombra-rosa:  rgba(255,173,213,0.22);
+  --sombra-deep:  rgba(192,66,122,0.18);
+  --transition:   0.3s cubic-bezier(.4,0,.2,1);
+
+  /* Fuente central del sitio */
+  --font-main: 'DM Serif Display', Georgia, serif;
+
+  /* ── ESCALA TIPOGRÁFICA UNIFICADA ──
+     Estas variables garantizan consistencia en todo el sitio.
+     Usarlas en lugar de valores hardcodeados en cada CSS. */
+
+  /* H1 — Títulos de hero/encabezado de página */
+  --typo-h1-size:    clamp(2.2rem, 5.5vw, 4rem);
+  --typo-h1-weight:  400;
+  --typo-h1-line:    1.12;
+
+  /* H2 — Títulos de sección (= .v2-section-title) */
+  --typo-h2-size:    clamp(1.9rem, 4vw, 2.8rem);
+  --typo-h2-weight:  400;
+  --typo-h2-line:    1.15;
+
+  /* H3 — Subtítulos de cards y bloques */
+  --typo-h3-size:    clamp(1.2rem, 2.5vw, 1.45rem);
+  --typo-h3-weight:  700;
+  --typo-h3-line:    1.3;
+
+  /* H4 — Ítems pequeños */
+  --typo-h4-size:    1.1rem;
+  --typo-h4-weight:  700;
+  --typo-h4-line:    1.4;
+
+  /* P — Párrafos cuerpo */
+  --typo-p-size:     1rem;
+  --typo-p-line:     1.75;
+  --typo-p-color:    #777;
+
+  /* Subtítulos de sección */
+  --typo-sub-size:   1rem;
+  --typo-sub-color:  #888;
+
+  /* Etiquetas/eyebrow */
+  --typo-label-size:    0.72rem;
+  --typo-label-spacing: 0.22em;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--blanco);
+  overflow-x: hidden;
+  /* FIX: scroll-padding-top se actualiza dinámicamente desde JS
+     con la altura real del header (tira + navbar).
+     El valor 0 aquí es solo fallback; JS lo sobreescribe. */
+  scroll-padding-top: 0;
+  font-family: var(--font-main);
+  font-size: var(--typo-p-size);
+  line-height: var(--typo-p-line);
+  color: var(--negro);
+}
+
+main { margin: 0; padding: 0; }
+
+/* Aplicar DM Serif Display a todos los elementos de texto */
+*:not(i):not(.fa):not([class*="fa-"]):not([class*="fab"]):not([class*="fas"]):not([class*="far"]) {
+  font-family: var(--font-main);
+}
+
+/* ── CLASE DE MARCA (compatibilidad) ── */
+.v2-brand-font { font-family: var(--font-main); }
+
+
+/* ============================================
+   JERARQUÍA TIPOGRÁFICA GLOBAL
+   Usamos "main h1" etc. para ganar especificidad
+   sobre los estilos por defecto de Bootstrap,
+   sin necesidad de !important.
+   ============================================ */
+
+/* H1 — elegante, weight 400, igual que el index */
+main h1 {
+  font-family: var(--font-main);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--negro);
+}
+
+/* H2 — títulos de sección */
+main h2 {
+  font-family: var(--font-main);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--negro);
+}
+
+/* H3 — subtítulos de cards */
+main h3 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--negro);
+}
+
+/* H4 — ítems pequeños */
+main h4 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--negro);
+}
+
+/* Párrafos */
+main p {
+  font-family: var(--font-main);
+  font-size: var(--typo-p-size);
+  line-height: var(--typo-p-line);
+  color: var(--typo-p-color);
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   HERO DE PÁGINAS INTERIORES
+   Clase reutilizable para el encabezado de
+   catálogo, acerca y contacto.
+   ============================================ */
+
+.cat-hero__title,
+.ac-hero__title,
+.ct-hero-title {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: inherit;
+}
+
+.cat-hero__sub,
+.ac-hero__sub,
+.ct-hero-sub {
+  font-family: var(--font-main);
+  font-size: var(--typo-sub-size);
+  line-height: 1.75;
+  color: inherit;
+  opacity: 0.88;
+  max-width: 520px;
+}
+
+.cat-hero__eyebrow,
+.ct-hero-label {
+  font-family: var(--font-main);
+  font-size: var(--typo-label-size);
+  font-weight: 400;
+  letter-spacing: var(--typo-label-spacing);
+  text-transform: uppercase;
+}
+
+
+/* ============================================
+   TIRA DE NOVEDAD
+   FIX: ahora vive DENTRO del .v2-header (sticky).
+   margin:0, line-height:1 y display:block eliminan
+   cualquier gap residual entre la tira y el navbar.
+   ============================================ */
+.v2-novedad-strip {
+  background: linear-gradient(90deg, var(--rosa-deep) 0%, #ff1493 100%);
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  margin: 0;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.v2-novedad-strip a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+/* FIX: el header es el bloque sticky unificado
+   que contiene la tira de novedad + el navbar.
+   Al ser un solo elemento sticky, no puede haber
+   gap entre sus hijos al cambiar el viewport. */
+.v2-header {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  background: transparent;
+  /* Transición solo para el scroll (se sobreescribe en mobile) */
+  transition: background 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.v2-navbar {
+  background: transparent !important;
+  padding: 0.6rem 0;
+  border: none !important;
+  border-bottom: none !important;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.v2-navbar.scrolled {
+  background: linear-gradient(135deg, #FFADD5 0%, #f090be 55%, #e0709f 100%) !important;
+  box-shadow: 0 2px 20px rgba(224,112,159,0.4);
+}
+
+.v2-navbar .navbar-brand img {
+  width: 80px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+  transition: transform var(--transition);
+}
+.v2-navbar .navbar-brand img:hover { transform: scale(1.06); }
+
+.v2-navbar .nav-link {
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.45rem 1rem;
+  margin: 0 0.2rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  transition: background var(--transition), color var(--transition);
+  font-family: var(--font-main);
+}
+.v2-navbar .nav-link:hover {
+  background: rgba(255,255,255,0.22);
+  text-shadow: 0 0 14px rgba(255,255,255,0.7), 0 1px 6px rgba(0,0,0,0.3);
+}
+.v2-navbar .nav-link.active {
+  background: rgba(255,255,255,0.22);
+  font-weight: 400;
+  text-shadow: 0 0 18px rgba(255,255,255,0.95), 0 0 6px rgba(255,255,255,0.6);
+}
+
+/* Hamburguesa */
+.v2-navbar .navbar-toggler {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v2-navbar .navbar-toggler:focus { box-shadow: none !important; outline: none !important; }
+
+.v2-hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: transform 0.32s ease, opacity 0.22s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+}
+.v2-navbar .navbar-toggler.is-active .v2-hamburger-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.v2-navbar .navbar-toggler.is-active .v2-hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.v2-navbar .navbar-toggler.is-active .v2-hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 991px) {
+  /* ── NAVBAR MOBILE ──
+     - Header transparente sobre el hero al inicio
+     - Se vuelve rosado al hacer scroll O al abrir el menú
+     - Línea blanca eliminada: borde/outline de Bootstrap anulado */
+
+  /* 1. Header transparente por defecto, sin transición en mobile
+        para que el menú aparezca instantáneo al abrirse */
+  .v2-header {
+    background: transparent;
+    transition: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* 2. Rosado al hacer scroll (con transición suave) */
+  .v2-header.scrolled {
+    background: linear-gradient(160deg, #FFADD5 0%, #f090be 50%, #e0709f 100%);
+    box-shadow: 0 2px 20px rgba(224,112,159,0.4);
+    transition: background 0.3s ease !important;
+  }
+
+  /* 3. Rosado instantáneo cuando el menú está abierto */
+  .v2-header:has(.navbar-collapse.show) {
+    background: linear-gradient(160deg, #FFADD5 0%, #f090be 50%, #e0709f 100%);
+    box-shadow: 0 8px 28px rgba(192,66,122,0.28);
+    transition: none !important;
+  }
+
+  /* 4. Navbar y todos sus hijos sin fondo ni borde —
+        Bootstrap inyecta fondo blanco y border-bottom
+        en el .navbar y su .container en mobile */
+  .v2-navbar,
+  .v2-navbar > *,
+  .v2-navbar .container,
+  .v2-navbar .container-fluid {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+  .v2-navbar {
+    padding-bottom: 0;
+    border-bottom: none !important;
+  }
+
+  /* 5. Collapse siempre transparente — el header ya tiene el rosado.
+        El flash blanco se elimina desactivando la animación de
+        Bootstrap en mobile (transition: none en el collapse). */
+  .v2-navbar .navbar-collapse,
+  .v2-navbar .navbar-collapse.collapsing,
+  .v2-navbar .navbar-collapse.show {
+    background: transparent !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0;
+    padding: 0.5rem 1rem 1.2rem;
+    /* Elimina la animación de altura de Bootstrap que causa el flash */
+    transition: none !important;
+  }
+
+  .v2-navbar .navbar-nav { align-items: center; }
+  .v2-navbar .nav-link {
+    font-size: 1.15rem;
+    text-shadow: none;
+    color: #fff !important;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.v2-footer {
+  background: linear-gradient(160deg, var(--rosa-claro) 0%, var(--rosa-medio) 55%, var(--rosa-fuerte) 100%);
+  color: #fff;
+  padding: 3.5rem 0 1.5rem;
+  margin-top: 0;
+}
+
+.v2-footer h5 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid rgba(255,255,255,0.18);
+  font-family: var(--font-main);
+}
+
+.v2-footer p,
+.v2-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  font-family: var(--font-main);
+}
+.v2-footer a:hover { opacity: 0.82; }
+
+.v2-footer ul { list-style: none; padding: 0; margin: 0; }
+.v2-footer ul li { margin-bottom: 0.5rem; }
+.v2-footer ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform var(--transition), opacity var(--transition);
+  padding: 0.12rem 0;
+}
+.v2-footer ul li a:hover { transform: translateX(4px); opacity: 0.88; }
+
+.v2-footer-logo {
+  width: 90px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+.v2-footer-tagline {
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+
+.v2-contact-list { list-style: none !important; padding: 0; margin: 0 0 1rem; }
+.v2-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.93rem;
+}
+.v2-contact-list li i { font-size: 0.88rem; opacity: 0.8; width: 16px; flex-shrink: 0; }
+
+/* Redes sociales */
+.v2-footer-social { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+.v2-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0.88rem;
+  font-weight: 400;
+  padding: 0.38rem 0.9rem;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all var(--transition);
+  white-space: nowrap;
+  font-family: var(--font-main);
+}
+.v2-social-link:hover { transform: translateY(-3px); box-shadow: 0 5px 14px rgba(0,0,0,0.15); }
+.v2-social-wa:hover       { background: rgba(37,211,102,0.5);  border-color: rgba(37,211,102,0.7); }
+.v2-social-fb:hover       { background: rgba(66,103,178,0.5);  border-color: rgba(66,103,178,0.7); }
+.v2-social-tiktok:hover   { background: rgba(0,0,0,0.38);      border-color: rgba(255,255,255,0.6); }
+.v2-social-ig:hover       { background: rgba(193,53,132,0.5);  border-color: rgba(193,53,132,0.7); }
+
+/* Dirección y mapa */
+.v2-footer-address { font-size: 0.93rem; line-height: 1.65; opacity: 0.95; margin-bottom: 1rem; }
+
+.v2-footer-map {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+  border: 2.5px solid rgba(255,255,255,0.4);
+  transition: box-shadow var(--transition);
+}
+.v2-footer-map:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.24); }
+.v2-footer-map iframe { width: 100%; height: 240px; border: none; display: block; }
+
+/* Copyright */
+.v2-footer-copyright {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.86rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.v2-footer-arrow { font-size: 0.62rem; opacity: 0.65; flex-shrink: 0; }
+
+/* Footer responsive */
+@media (max-width: 767px) {
+  .v2-footer,
+  .v2-footer .col-md-4,
+  .v2-footer .col-md-2,
+  .v2-footer .col-md-6,
+  .v2-footer .col-sm-6,
+  .v2-footer .col-6 {
+    text-align: center !important;
+  }
+  .v2-footer h5 { text-align: center !important; }
+  .v2-footer ul { display: flex; flex-direction: column; align-items: center; }
+  .v2-footer ul li a { justify-content: center; }
+  .v2-footer ul li a:hover { transform: none; }
+  .v2-footer-social { justify-content: center; }
+  .v2-contact-list { display: table; margin: 0 auto; }
+  .v2-footer-map iframe { height: 200px; }
+  .v2-footer .col-md-4,
+  .v2-footer .col-md-2,
+  .v2-footer .col-md-6,
+  .v2-footer .col-sm-6 { margin-bottom: 2rem; }
+}
+
+/* ============================================
+   BOTÓN FLOTANTE WHATSAPP
+   ============================================ */
+.v2-wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: var(--verde-wa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37,211,102,0.5);
+  z-index: 9999;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.v2-wa-float:hover {
+  background: #1ebe5a;
+  transform: scale(1.12) translateY(-3px);
+  box-shadow: 0 10px 28px rgba(37,211,102,0.65);
+}
+.v2-wa-float::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--verde-wa);
+  opacity: 0.35;
+  animation: waPulse 2s ease-out infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);    opacity: 0.35; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+@media (max-width: 576px) {
+  .v2-wa-float { bottom: 4.5rem; right: 1.2rem; width: 52px; height: 52px; }
+}
+
+/* ============================================
+   UTILIDADES GENERALES (compartidas)
+   ============================================ */
+
+/* ── Etiqueta eyebrow de sección ── */
+.v2-section-label {
+  text-align: center;
+  font-size: var(--typo-label-size);
+  font-weight: 400;
+  letter-spacing: var(--typo-label-spacing);
+  text-transform: uppercase;
+  color: var(--rosa-deep);
+  margin-bottom: 0.6rem;
+  font-family: var(--font-main);
+  display: block;
+}
+
+/* ── Título principal de sección (H2) ── */
+.v2-section-title {
+  text-align: center;
+  font-size: var(--typo-h2-size);
+  font-weight: var(--typo-h2-weight);
+  color: var(--negro);
+  margin-bottom: 0.7rem;
+  line-height: var(--typo-h2-line);
+  font-family: var(--font-main);
+}
+
+/* ── Subtítulo de sección (bajada del H2) ── */
+.v2-section-sub {
+  text-align: center;
+  font-size: var(--typo-sub-size);
+  color: var(--typo-sub-color);
+  margin-bottom: 3rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-family: var(--font-main);
+}
+
+/* ── Botones reutilizables ── */
+.v2-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--rosa-claro);
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 400;
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(255,173,213,0.5);
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+  font-family: var(--font-main);
+}
+.v2-btn-primary:hover {
+  background: var(--rosa-deep);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(192,66,122,0.45);
+  color: #fff !important;
+}
+
+.v2-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--verde-wa);
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 1rem 2.4rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-family: var(--font-main);
+}
+.v2-btn-wa:hover {
+  background: #1ebe5a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+  color: #fff !important;
+}
+
+/* ── Scroll fade-in (Intersection Observer) ── */
+.v2-scroll-fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.65s cubic-bezier(.22,1,.36,1);
+}
+.v2-scroll-fade.v2-visible { opacity: 1; transform: translateY(0); }
+
+/* Stagger delay para grupos de cards */
+.v2-stagger > *:nth-child(1) { transition-delay: 0s; }
+.v2-stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.v2-stagger > *:nth-child(3) { transition-delay: 0.2s; }
+.v2-stagger > *:nth-child(4) { transition-delay: 0.3s; }

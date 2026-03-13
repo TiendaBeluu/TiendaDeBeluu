@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda de Belu - Ropa, accesorios y más para tu estilo">
+  <title>Tienda de Belu</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- CSS General (navbar, footer, utilidades — compartido con todas las páginas) -->
+  <link rel="stylesheet" href="assets/css/general.css">
+
+  <!-- CSS específico del index -->
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- =============================================
+       HEADER / NAVBAR
+       FIX: la tira de novedad ahora está DENTRO
+       del header para que sea sticky junto con el
+       navbar y no genere línea blanca al cambiar
+       de viewport en DevTools.
+       ============================================= -->
+  <header class="v2-header">
+
+    <!-- TIRA DE NOVEDAD (movida aquí dentro del header) -->
+    <div class="v2-novedad-strip">
+      🌸 ¡Nuevos artículos esta semana!
+      <a href="catalogo.html">Ver novedades →</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg v2-navbar">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logosinfondo.png" alt="Logo Tienda de Belu">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#v2NavMenu"
+          aria-controls="v2NavMenu" aria-expanded="false" aria-label="Abrir menú" id="v2HamburgerBtn">
+          <span class="v2-hamburger-line"></span>
+          <span class="v2-hamburger-line"></span>
+          <span class="v2-hamburger-line"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="v2NavMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#v2-ofrecemos">¿Qué Ofrecemos?</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca De</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- =============================================
+         HERO SECTION
+         ============================================= -->
+    <section class="v2-hero">
+      <div class="v2-hero-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-xl-7">
+
+              <span class="v2-hero-eyebrow hero-fade-up">
+                Moda · Accesorios · Belleza
+              </span>
+
+              <h1 class="v2-hero-title v2-brand-font hero-fade-up">
+                Tu estilo,<br><em>tu identidad</em>
+              </h1>
+
+              <p class="v2-hero-subtitle hero-fade-up">
+                Ropa, accesorios y mucho más, seleccionados con amor para que luzcas increíble todos los días.
+              </p>
+
+              <div class="v2-hero-actions hero-fade-up">
+                <a href="catalogo.html" class="v2-btn-primary">
+                  Ver Catálogo
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#v2-categorias" class="v2-btn-outline">
+                  <i class="fa-solid fa-grid-2"></i>
+                  Categorías
+                </a>
+              </div>
+
+              <div class="v2-hero-stats hero-fade-up">
+                <div>
+                  <span class="v2-hero-stat-num">+200</span>
+                  <span class="v2-hero-stat-label">Productos</span>
+                </div>
+                <div>
+                  <span class="v2-hero-stat-num">⭐ 5.0</span>
+                  <span class="v2-hero-stat-label">Calificación</span>
+                </div>
+                <div>
+                  <span class="v2-hero-stat-num">Envíos</span>
+                  <span class="v2-hero-stat-label">Todo Paraguay</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="v2-scroll-hint">
+        <i class="fa-solid fa-chevron-down"></i>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CATEGORÍAS — ACCESO RÁPIDO
+         ============================================= -->
+    <section class="v2-categorias" id="v2-categorias">
+      <div class="container">
+
+        <p class="v2-section-label v2-scroll-fade">Explorar</p>
+        <h2 class="v2-section-title v2-scroll-fade v2-brand-font">Nuestras Categorías</h2>
+        <p class="v2-section-sub v2-scroll-fade">Todo lo que necesitás en un solo lugar</p>
+
+        <div class="row g-4 v2-stagger">
+
+          <div class="col-md-4 v2-scroll-fade">
+            <a href="catalogo.html" class="v2-cat-card">
+              <span class="v2-cat-emoji">👗</span>
+              <span class="v2-cat-name">Ropa</span>
+              <span class="v2-cat-desc">Vestidos, blusas, pantalones y más</span>
+              <span class="v2-cat-pill">Explorar →</span>
+            </a>
+          </div>
+
+          <div class="col-md-4 v2-scroll-fade">
+            <a href="catalogo.html" class="v2-cat-card">
+              <span class="v2-cat-emoji">👜</span>
+              <span class="v2-cat-name">Accesorios</span>
+              <span class="v2-cat-desc">Carteras, collares, pulseras y aros</span>
+              <span class="v2-cat-pill">Explorar →</span>
+            </a>
+          </div>
+
+          <div class="col-md-4 v2-scroll-fade">
+            <a href="catalogo.html" class="v2-cat-card">
+              <span class="v2-cat-emoji">✨</span>
+              <span class="v2-cat-name">Belleza & Más</span>
+              <span class="v2-cat-desc">Pestañas, cosméticos y novedades</span>
+              <span class="v2-cat-pill">Explorar →</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         BANNER NOVEDADES / PROMO
+         ============================================= -->
+    <section class="v2-promo-banner">
+      <div class="container">
+        <div class="v2-promo-inner">
+
+          <div class="v2-promo-text v2-scroll-fade">
+            <h2 class="v2-brand-font">🌸 ¡Novedades de la semana!</h2>
+            <p>Productos nuevos llegan constantemente. ¡No te pierdas las últimas incorporaciones!</p>
+            <div class="v2-promo-badges">
+              <span class="v2-promo-badge">Envíos a todo Paraguay</span>
+              <span class="v2-promo-badge">Atención personalizada</span>
+              <span class="v2-promo-badge">Precios accesibles</span>
+            </div>
+          </div>
+
+          <a href="catalogo.html" class="v2-btn-primary v2-scroll-fade"
+            style="background:#fff; color:var(--rosa-deep) !important; box-shadow: 0 6px 22px rgba(0,0,0,0.14);">
+            Ver novedades
+            <i class="fa-solid fa-sparkles"></i>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PRODUCTOS DESTACADOS
+         ============================================= -->
+    <section class="v2-productos">
+      <div class="container">
+
+        <p class="v2-section-label v2-scroll-fade">Selección especial</p>
+        <h2 class="v2-section-title v2-scroll-fade v2-brand-font">Productos Destacados</h2>
+        <p class="v2-section-sub v2-scroll-fade">Lo que más nos piden, lo más amado por nuestras clientas</p>
+
+        <!-- Grid de 4 cards -->
+        <div class="v2-prod-grid mb-5 v2-stagger">
+
+          <!-- Card 1 -->
+          <div class="v2-prod-card v2-scroll-fade">
+            <div class="v2-prod-img-wrap">
+              <div class="v2-prod-overlay">
+                <a href="catalogo.html" class="v2-prod-overlay-btn">Ver producto</a>
+              </div>
+              <span class="v2-prod-badge v2-prod-badge--nuevo">Nuevo</span>
+              <button class="v2-prod-fav" aria-label="Favorito"><i class="fa-regular fa-heart"></i></button>
+              <img src="assets/img/articulos/articulo1.jpeg" alt="Kit de Pestañas Sanishi" loading="lazy">
+            </div>
+            <div class="v2-prod-body">
+              <span class="v2-prod-name">Kit de Pestañas Sanishi</span>
+              <span class="v2-prod-desc">Set completo con pinzas y accesorios</span>
+              <div class="v2-prod-footer">
+                <span style="font-size:0.78rem;">
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                </span>
+                <a href="catalogo.html" class="v2-prod-cta">Gs. 95.000</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="v2-prod-card v2-scroll-fade">
+            <div class="v2-prod-img-wrap">
+              <div class="v2-prod-overlay">
+                <a href="catalogo.html" class="v2-prod-overlay-btn">Ver producto</a>
+              </div>
+              <span class="v2-prod-badge v2-prod-badge--popular">Popular</span>
+              <button class="v2-prod-fav" aria-label="Favorito"><i class="fa-regular fa-heart"></i></button>
+              <img src="assets/img/articulos/articulo2.jpeg" alt="Kit de Pestañas Sanishi" loading="lazy">
+            </div>
+            <div class="v2-prod-body">
+              <span class="v2-prod-name">Kit de Pestañas Sanishi</span>
+              <span class="v2-prod-desc">Aplicación duradera y resultado espectacular</span>
+              <div class="v2-prod-footer">
+                <span style="font-size:0.78rem;">
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                </span>
+                <a href="catalogo.html" class="v2-prod-cta">Gs. 95.000</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="v2-prod-card v2-scroll-fade">
+            <div class="v2-prod-img-wrap">
+              <div class="v2-prod-overlay">
+                <a href="catalogo.html" class="v2-prod-overlay-btn">Ver producto</a>
+              </div>
+              <span class="v2-prod-badge v2-prod-badge--oferta">Oferta</span>
+              <button class="v2-prod-fav" aria-label="Favorito"><i class="fa-regular fa-heart"></i></button>
+              <img src="assets/img/articulos/articulo3.jpeg" alt="Kit de Pestañas Unique Charm" loading="lazy">
+            </div>
+            <div class="v2-prod-body">
+              <span class="v2-prod-name">Kit de Pestañas Unique Charm</span>
+              <span class="v2-prod-desc">Bond, seal y removedor en un solo set</span>
+              <div class="v2-prod-footer">
+                <span style="font-size:0.78rem;">
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                </span>
+                <a href="catalogo.html" class="v2-prod-cta">Gs. 110.000</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="v2-prod-card v2-scroll-fade">
+            <div class="v2-prod-img-wrap">
+              <div class="v2-prod-overlay">
+                <a href="catalogo.html" class="v2-prod-overlay-btn">Ver producto</a>
+              </div>
+              <button class="v2-prod-fav" aria-label="Favorito"><i class="fa-regular fa-heart"></i></button>
+              <img src="assets/img/articulos/articulo14.jpeg" alt="Respingador de Nariz más Pinza" loading="lazy">
+            </div>
+            <div class="v2-prod-body">
+              <span class="v2-prod-name">Respingador de Nariz más Pinza</span>
+              <span class="v2-prod-desc">Kit completo con pinza afinadora incluida</span>
+              <div class="v2-prod-footer">
+                <span style="font-size:0.78rem;">
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                  <i class="fa-solid fa-star" style="color:#f4b942; font-size:0.7rem;"></i>
+                </span>
+                <a href="catalogo.html" class="v2-prod-cta">Gs. 70.000</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carrusel + Más Vendidos -->
+        <div class="row g-4 align-items-start v2-scroll-fade">
+
+          <!-- Carrusel -->
+          <div class="col-lg-6 col-12">
+            <div class="v2-carousel-card">
+              <div id="v2Carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
+
+                  <div class="carousel-item active">
+                    <div class="v2-carousel-img-wrap">
+                      <img src="assets/img/articulos/articulo1.jpeg" alt="Kit de Pestañas Sanishi">
+                      <span class="v2-prod-badge v2-prod-badge--nuevo" style="z-index:3;">Nuevo</span>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="v2-carousel-img-wrap">
+                      <img src="assets/img/articulos/articulo2.jpeg" alt="Kit de Pestañas Sanishi">
+                      <span class="v2-prod-badge v2-prod-badge--popular" style="z-index:3;">Popular</span>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="v2-carousel-img-wrap">
+                      <img src="assets/img/articulos/articulo3.jpeg" alt="Kit de Pestañas Unique Charm">
+                      <span class="v2-prod-badge v2-prod-badge--oferta" style="z-index:3;">Oferta</span>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="v2-carousel-img-wrap">
+                      <img src="assets/img/articulos/articulo4.jpeg" alt="Kit de Extensiones">
+                    </div>
+                  </div>
+
+                </div>
+
+                <button class="v2-prev" type="button" data-bs-target="#v2Carousel" data-bs-slide="prev"
+                  aria-label="Anterior">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button class="v2-next" type="button" data-bs-target="#v2Carousel" data-bs-slide="next"
+                  aria-label="Siguiente">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                <div class="carousel-indicators v2-dots">
+                  <button type="button" data-bs-target="#v2Carousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#v2Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#v2Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#v2Carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+              </div>
+
+              <div class="v2-carousel-footer">
+                <p class="v2-carousel-footer-text">Conocé todos nuestros productos</p>
+                <a href="catalogo.html" class="v2-carousel-footer-btn">Ver Catálogo →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Más Vendidos -->
+          <div class="col-lg-6 col-12">
+            <div class="v2-vendidos-card">
+
+              <div class="v2-vendidos-header">
+                <h4 class="v2-vendidos-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFADD5">
+                    <path
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                  Más Vendidos
+                </h4>
+                <a href="catalogo.html"
+                  style="font-size:0.78rem; color:var(--rosa-deep); text-decoration:none; font-weight:600;">Ver
+                  todos</a>
+              </div>
+
+              <ul class="v2-vendidos-list">
+
+                <li class="v2-vendido-item">
+                  <span class="v2-vendido-num">1</span>
+                  <div class="v2-vendido-img">
+                    <img src="assets/img/articulos/articulo1.jpeg" alt="Kit de Pestañas Sanishi">
+                  </div>
+                  <div class="v2-vendido-info">
+                    <span class="v2-vendido-name">Kit de Pestañas Sanishi</span>
+                    <span class="v2-vendido-sub">Gs. 95.000</span>
+                  </div>
+                  <a href="catalogo.html" class="v2-vendido-btn">Ver</a>
+                </li>
+
+                <li class="v2-vendido-item">
+                  <span class="v2-vendido-num">2</span>
+                  <div class="v2-vendido-img">
+                    <img src="assets/img/articulos/articulo3.jpeg" alt="Kit de Pestañas Unique Charm">
+                  </div>
+                  <div class="v2-vendido-info">
+                    <span class="v2-vendido-name">Kit de Pestañas Unique Charm</span>
+                    <span class="v2-vendido-sub">Gs. 110.000</span>
+                  </div>
+                  <a href="catalogo.html" class="v2-vendido-btn">Ver</a>
+                </li>
+
+                <li class="v2-vendido-item">
+                  <span class="v2-vendido-num">3</span>
+                  <div class="v2-vendido-img">
+                    <img src="assets/img/articulos/articulo4.jpeg" alt="Kit de Extensiones">
+                  </div>
+                  <div class="v2-vendido-info">
+                    <span class="v2-vendido-name">Kit de Extensiones</span>
+                    <span class="v2-vendido-sub">Gs. 70.000</span>
+                  </div>
+                  <a href="catalogo.html" class="v2-vendido-btn">Ver</a>
+                </li>
+
+                <li class="v2-vendido-item">
+                  <span class="v2-vendido-num">4</span>
+                  <div class="v2-vendido-img">
+                    <img src="assets/img/articulos/articulo14.jpeg" alt="Respingador de Nariz más Pinza">
+                  </div>
+                  <div class="v2-vendido-info">
+                    <span class="v2-vendido-name">Respingador de Nariz más Pinza</span>
+                    <span class="v2-vendido-sub">Gs. 70.000</span>
+                  </div>
+                  <a href="catalogo.html" class="v2-vendido-btn">Ver</a>
+                </li>
+
+              </ul>
+
+              <a href="catalogo.html" class="v2-vendidos-ver-mas">
+                Ver todos los productos
+                <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         ¿QUÉ OFRECEMOS?
+         ============================================= -->
+    <section class="v2-ofrecemos" id="v2-ofrecemos">
+      <div class="container">
+
+        <p class="v2-section-label v2-scroll-fade">Nuestra propuesta</p>
+        <h2 class="v2-section-title v2-scroll-fade v2-brand-font">¿Qué Ofrecemos?</h2>
+        <p class="v2-section-sub v2-scroll-fade">Encontrá todo lo que necesitás para lucir increíble, con la calidad y
+          el trato que merecés</p>
+
+        <div class="row g-4 v2-stagger">
+
+          <div class="col-md-4 v2-scroll-fade">
+            <div class="v2-ofr-card">
+              <div class="v2-ofr-icon-wrap">👗</div>
+              <h3>Ropa</h3>
+              <p>Vestidos, blusas, pantalones y más pensados para cada ocasión. Desde looks casuales hasta outfits
+                elegantes.</p>
+              <ul class="v2-ofr-list">
+                <li><i class="fa-solid fa-check"></i> Vestidos y faldas</li>
+                <li><i class="fa-solid fa-check"></i> Blusas y tops</li>
+                <li><i class="fa-solid fa-check"></i> Pantalones y jeans</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 v2-scroll-fade">
+            <div class="v2-ofr-card v2-ofr-card--featured">
+              <div class="v2-ofr-icon-wrap">👜</div>
+              <h3>Accesorios</h3>
+              <p>Carteras, collares, pulseras y mucho más para complementar cualquier look con elegancia y personalidad.
+              </p>
+              <ul class="v2-ofr-list">
+                <li><i class="fa-solid fa-check"></i> Carteras y bolsos</li>
+                <li><i class="fa-solid fa-check"></i> Collares y pulseras</li>
+                <li><i class="fa-solid fa-check"></i> Aros y anillos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4 v2-scroll-fade">
+            <div class="v2-ofr-card">
+              <div class="v2-ofr-icon-wrap">✨</div>
+              <h3>Otros Productos</h3>
+              <p>Artículos de belleza, novedades y productos especiales que llegan constantemente. ¡Siempre hay algo
+                nuevo!</p>
+              <ul class="v2-ofr-list">
+                <li><i class="fa-solid fa-check"></i> Pestañas y extensiones</li>
+                <li><i class="fa-solid fa-check"></i> Maquillaje y cosméticos</li>
+                <li><i class="fa-solid fa-check"></i> Artículos de temporada</li>
+                <li><i class="fa-solid fa-check"></i> Novedades frecuentes</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="v2-divider v2-scroll-fade v2-brand-font">
+          <span>¿Por qué elegirnos?</span>
+        </div>
+
+        <div class="row g-4 mt-1 v2-stagger">
+
+          <div class="col-md-3 col-sm-6 v2-scroll-fade">
+            <div class="v2-porque-item">
+              <div class="v2-porque-icon"><i class="fa-solid fa-star"></i></div>
+              <h4>Calidad Garantizada</h4>
+              <p>Seleccionamos cada artículo con cuidado para ofrecerte productos que duran y lucen siempre bien.</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 v2-scroll-fade">
+            <div class="v2-porque-item">
+              <div class="v2-porque-icon"><i class="fa-solid fa-heart"></i></div>
+              <h4>Atención Personalizada</h4>
+              <p>Te asesoramos con gusto para encontrar lo que más te favorece. Tu satisfacción es lo primero.</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 v2-scroll-fade">
+            <div class="v2-porque-item">
+              <div class="v2-porque-icon"><i class="fa-solid fa-tag"></i></div>
+              <h4>Precios Accesibles</h4>
+              <p>Moda y estilo al alcance de todas. Artículos hermosos sin salirte del presupuesto.</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 v2-scroll-fade">
+            <div class="v2-porque-item">
+              <div class="v2-porque-icon"><i class="fa-solid fa-truck"></i></div>
+              <h4>Envíos a Todo el País</h4>
+              <p>Llevamos tus compras hasta la puerta de tu casa, a cualquier rincón del Paraguay.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CTA WHATSAPP
+         ============================================= -->
+    <section class="v2-cta-section">
+      <div class="container">
+        <div class="v2-cta-card v2-scroll-fade">
+
+          <div>
+            <h2 class="v2-brand-font">¿Te quedaste con alguna duda?</h2>
+            <p>Escribinos por WhatsApp y te respondemos al instante. ¡Estamos para ayudarte!</p>
+          </div>
+
+          <a href="https://wa.me/595992863948?text=Hola%20Tienda%20Belu,%20quisiera%20hacer%20una%20consulta."
+            target="_blank" rel="noopener noreferrer" class="v2-btn-wa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+            Contactanos por WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="v2-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Col 1: Logo + Info + Redes -->
+        <div class="col-md-4 col-sm-12">
+          <a href="index.html" style="display:inline-block; margin-bottom:1.2rem;">
+            <img src="assets/img/logosinfondo.png" alt="Logo Tienda de Belu" class="v2-footer-logo">
+          </a>
+          <div>
+            <h5>Tienda de Belu</h5>
+            <p class="v2-footer-tagline">Moda y accesorios con estilo y calidad.</p>
+            <ul class="v2-contact-list">
+              <li><i class="fa-solid fa-phone"></i><a href="tel:+595992863948">+595 992 863 948</a></li>
+              <li><i class="fa-solid fa-envelope"></i><a
+                  href="mailto:tiendadebeluu@gmail.com">tiendadebeluu@gmail.com</a></li>
+              <li><i class="fa-solid fa-clock"></i><span>Lun–Sáb: 9:00 a 18:00</span></li>
+            </ul>
+          </div>
+          <div class="v2-footer-social">
+            <a href="https://wa.me/595992863948" target="_blank" rel="noopener noreferrer"
+              class="v2-social-link v2-social-wa" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+            </a>
+            <a href="https://www.facebook.com/share/17E23mWFLx/?mibextid=wwXIfr" target="_blank"
+              rel="noopener noreferrer" class="v2-social-link v2-social-fb" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i><span>Facebook</span>
+            </a>
+            <a href="https://www.tiktok.com/@tiendadebeluu" target="_blank" rel="noopener noreferrer"
+              class="v2-social-link v2-social-tiktok" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+            </a>
+            <a href="https://www.instagram.com/tiendadebeluu" target="_blank" rel="noopener noreferrer"
+              class="v2-social-link v2-social-ig" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navegación -->
+        <div class="col-md-2 col-sm-6 col-6">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Inicio</a></li>
+            <li><a href="#v2-ofrecemos"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>¿Qué Ofrecemos?</a>
+            </li>
+            <li><a href="catalogo.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Catálogo</a></li>
+            <li><a href="acerca.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Acerca de</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Mapa -->
+        <div class="col-md-6 col-sm-12">
+          <h5><i class="fa-solid fa-location-dot me-2"></i>Ubicación</h5>
+          <p class="v2-footer-address">
+            Av. Mariscal López esq. Nanawa<br>
+            Arroyos y Esteros, Paraguay
+          </p>
+          <div class="v2-footer-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.1393252873645!2d-57.10456722585318!3d-25.055181718164622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dc300060d4255%3A0x932f2931797eb55!2sTienda%20de%20Belu!5e0!3m2!1ses!2spy!4v1772836158541!5m2!1ses!2spy"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="v2-footer-copyright">
+            <p>&copy; 2026 Tienda de Belu. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.3rem; font-size: 0.8rem; opacity: 0.75;">
+              Desarrollado por
+              <a href="https://ebdigitalstudio.github.io/EBDigital/" target="_blank" rel="noopener noreferrer"
+                style="color:#fff; font-weight:600; text-decoration:underline;">
+                EB Digital Studio
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       BOTÓN FLOTANTE WHATSAPP
+       ============================================= -->
+  <a href="https://wa.me/595992863948?text=Hola%20Tienda%20Belu,%20quisiera%20hacer%20una%20consulta." target="_blank"
+    rel="noopener noreferrer" class="v2-wa-float" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+    </svg>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS compartido del sitio (navbar, scroll fade, hamburguesa) -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

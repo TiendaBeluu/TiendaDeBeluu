@@ -1,0 +1,532 @@
+/* =============================================
+   TIENDA DE BELU — ACERCA.CSS
+   Estilos exclusivos de la página "Acerca de"
+   Usa las variables y escala tipográfica de general.css
+   ============================================= */
+
+
+/* ══════════════════════════════════════════════
+   1. HERO / INTRO
+   ══════════════════════════════════════════════ */
+
+.ac-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 3rem;   /* más espacio para dar peso al H1 */
+  background: linear-gradient(160deg, var(--gris-suave) 0%, #fff5fa 60%, var(--gris-borde) 100%);
+  text-align: center;
+}
+
+/* Pétalos decorativos flotantes */
+.ac-hero__petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ac-petal {
+  position: absolute;
+  border-radius: 50% 10% 50% 10%;
+  opacity: 0.18;
+  animation: petalFloat 8s ease-in-out infinite;
+}
+
+.ac-petal--1 {
+  width: 90px; height: 90px;
+  background: var(--rosa-claro);
+  top: 8%; left: 6%;
+  animation-delay: 0s;
+  transform: rotate(20deg);
+}
+.ac-petal--2 {
+  width: 60px; height: 60px;
+  background: var(--rosa-medio);
+  top: 20%; right: 10%;
+  animation-delay: 1.5s;
+  transform: rotate(-35deg);
+}
+.ac-petal--3 {
+  width: 110px; height: 110px;
+  background: var(--rosa-claro);
+  bottom: 10%; left: 15%;
+  animation-delay: 3s;
+  transform: rotate(50deg);
+}
+.ac-petal--4 {
+  width: 50px; height: 50px;
+  background: var(--rosa-fuerte);
+  bottom: 25%; right: 7%;
+  animation-delay: 2s;
+  transform: rotate(-15deg);
+}
+.ac-petal--5 {
+  width: 75px; height: 75px;
+  background: var(--rosa-medio);
+  top: 55%; left: 50%;
+  animation-delay: 4s;
+  transform: rotate(70deg);
+}
+
+@keyframes petalFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 20deg)); }
+  50%       { transform: translateY(-18px) rotate(calc(var(--r, 20deg) + 10deg)); }
+}
+
+.ac-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── H1 del hero de Acerca ──
+   Especificidad alta para ganar a Bootstrap (.ac-hero h1) */
+.ac-hero .ac-hero__title,
+.ac-hero__title {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;            /* elegante, NO bold */
+  line-height: 1.12;
+  color: var(--negro);
+  margin-bottom: 1rem;
+}
+
+.ac-hero__title em {
+  font-style: italic;
+  color: var(--rosa-deep);
+}
+
+/* ── Subtítulo del hero ──
+   general.css define font-size: 1rem (var(--typo-sub-size)).
+   Solo ajustamos color. */
+.ac-hero__sub {
+  color: #888;
+  line-height: 1.75;
+  margin-bottom: 1.6rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ac-hero__line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rosa-claro), var(--rosa-fuerte));
+  border-radius: 2px;
+  margin: 0 auto 1.4rem;
+}
+
+/* Flecha sutil que invita a scrollear */
+.ac-hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0.4;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.ac-hero__scroll span {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rosa-deep);
+}
+
+.ac-hero__scroll i {
+  font-size: 0.85rem;
+  color: var(--rosa-deep);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%       { transform: translateY(5px); opacity: 0.7; }
+}
+
+
+/* ══════════════════════════════════════════════
+   2. NUESTRA HISTORIA
+   ══════════════════════════════════════════════ */
+
+.ac-historia {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+/* Imagen */
+.ac-historia__img-wrap {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+}
+
+.ac-historia__img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(145deg, var(--gris-suave) 0%, #ffe8f3 50%, var(--gris-borde) 100%);
+  border-radius: 24px 4px 24px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid var(--gris-borde);
+  box-shadow: 0 12px 40px rgba(255, 173, 213, 0.2);
+  overflow: hidden;
+}
+
+.ac-historia__img-placeholder--foto {
+  padding: 0;
+  background: none;
+}
+
+.ac-historia__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 22px 2px 22px 2px;
+  transition: transform 0.5s ease;
+}
+
+.ac-historia__foto:hover {
+  transform: scale(1.04);
+}
+
+.ac-historia__badge {
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1rem;
+  background: linear-gradient(135deg, var(--rosa-fuerte), var(--rosa-deep));
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 18px rgba(192, 66, 122, 0.38);
+  white-space: nowrap;
+}
+
+/* ── H2 "Nuestra historia" ──
+   Usa el mismo tamaño que .v2-section-title del index
+   para consistencia total entre secciones. */
+.ac-historia__title {
+  font-size: var(--typo-h2-size);      /* clamp(1.9rem, 4vw, 2.8rem) */
+  font-weight: var(--typo-h2-weight);  /* 400 — mismo que .v2-section-title */
+  color: var(--negro);
+  margin-bottom: 1.6rem;
+  line-height: var(--typo-h2-line);
+  font-family: var(--font-main);
+}
+
+/* Párrafos de historia — consistentes con --typo-p del sitio */
+.ac-historia__text p {
+  font-size: var(--typo-p-size);   /* 1rem — mismo que todo el sitio */
+  color: #666;
+  line-height: 1.9;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-main);
+}
+
+.ac-historia__cierre {
+  font-size: 1.05rem !important;
+  color: var(--rosa-deep) !important;
+  border-left: 3px solid var(--rosa-claro);
+  padding-left: 1.1rem;
+  margin-top: 1.6rem !important;
+  font-style: italic;
+}
+
+
+/* ══════════════════════════════════════════════
+   3. MISIÓN Y VISIÓN
+   ══════════════════════════════════════════════ */
+
+.ac-mv {
+  padding: 6rem 0;
+  background: var(--gris-suave);
+}
+
+.ac-mv-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.8rem 2.2rem;
+  text-align: center;
+  height: 100%;
+  border: 1.5px solid var(--gris-borde);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ac-mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+}
+
+.ac-mv-card--mision::before {
+  background: linear-gradient(90deg, var(--rosa-claro), var(--rosa-medio));
+}
+
+.ac-mv-card--vision::before {
+  background: linear-gradient(90deg, var(--rosa-fuerte), var(--rosa-deep));
+}
+
+.ac-mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(255, 173, 213, 0.25);
+}
+
+.ac-mv-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.4rem;
+  font-size: 1.5rem;
+}
+
+.ac-mv-card--mision .ac-mv-card__icon {
+  background: linear-gradient(135deg, #ffe8f5, #ffcce8);
+  color: var(--rosa-fuerte);
+}
+
+.ac-mv-card--vision .ac-mv-card__icon {
+  background: linear-gradient(135deg, #ffd6eb, #ffb3d8);
+  color: var(--rosa-deep);
+}
+
+/* ── H3 de las cards de Misión/Visión ──
+   Consistente con h3 del sistema: tamaño entre 1.2 y 1.45rem, weight 700 */
+.ac-mv-card__title {
+  font-size: var(--typo-h3-size);     /* clamp(1.2rem, 2.5vw, 1.45rem) */
+  font-weight: var(--typo-h3-weight); /* 700 */
+  color: var(--negro);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  font-family: var(--font-main);
+}
+
+.ac-mv-card__text {
+  font-size: var(--typo-p-size);   /* 1rem */
+  color: #777;
+  line-height: 1.85;
+  margin: 0;
+  font-family: var(--font-main);
+}
+
+
+/* ══════════════════════════════════════════════
+   4. VALORES DE LA MARCA
+   ══════════════════════════════════════════════ */
+
+.ac-valores {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+.ac-valor {
+  text-align: center;
+  padding: 2.2rem 1.4rem;
+  border-radius: 18px;
+  background: var(--gris-suave);
+  border: 1.5px solid transparent;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  height: 100%;
+}
+
+.ac-valor:hover {
+  border-color: var(--rosa-claro);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(255, 173, 213, 0.2);
+  transform: translateY(-4px);
+}
+
+.ac-valor__icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--rosa-medio) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  font-size: 1.4rem;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255, 173, 213, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ac-valor:hover .ac-valor__icon-wrap {
+  transform: scale(1.1);
+  box-shadow: 0 10px 26px rgba(192, 66, 122, 0.3);
+}
+
+/* ── H4 de valores ──
+   Antes era weight 400 — ahora alineado al sistema: weight 700,
+   igual que .v2-porque-item h4 del index */
+.ac-valor__name {
+  font-size: var(--typo-h4-size);     /* 1.1rem */
+  font-weight: var(--typo-h4-weight); /* 700 — corregido desde 400 */
+  color: var(--negro);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+  font-family: var(--font-main);
+}
+
+.ac-valor__desc {
+  font-size: var(--typo-p-size);   /* 1rem */
+  color: #888;
+  line-height: 1.7;
+  margin: 0;
+  font-family: var(--font-main);
+}
+
+
+/* ══════════════════════════════════════════════
+   5. CIERRE EMOCIONAL
+   ══════════════════════════════════════════════ */
+
+.ac-cierre {
+  position: relative;
+  padding: 7rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ac-cierre__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--rosa-claro) 0%, var(--rosa-medio) 45%, var(--rosa-fuerte) 100%);
+  z-index: 0;
+}
+
+.ac-cierre__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.18) 0%, transparent 70%),
+              radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
+}
+
+.ac-cierre__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.ac-cierre__icon {
+  display: block;
+  font-size: 2.4rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.4rem;
+  animation: heartBeat 2.4s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.12); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.08); }
+  70%       { transform: scale(1); }
+}
+
+/* H2 del cierre — mismo tamaño que .v2-section-title pero en blanco */
+.ac-cierre__text {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  font-family: var(--font-main);
+}
+
+.ac-cierre__sub {
+  font-size: var(--typo-p-size);   /* 1rem */
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 2.4rem;
+  line-height: 1.75;
+  font-family: var(--font-main);
+}
+
+.ac-cierre__btn {
+  background: #fff !important;
+  color: var(--rosa-deep) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.ac-cierre__btn:hover {
+  background: var(--rosa-deep) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@media (max-width: 991px) {
+  .ac-historia__badge {
+    right: 0;
+    bottom: -1rem;
+  }
+  .ac-historia__img-wrap {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .ac-hero { padding: 2.5rem 0 2rem; }
+
+  .ac-petal--1 { width: 60px; height: 60px; left: 2%; }
+  .ac-petal--2 { width: 40px; height: 40px; right: 3%; }
+  .ac-petal--3 { width: 70px; height: 70px; left: 5%; }
+  .ac-petal--4 { width: 35px; height: 35px; right: 3%; }
+  .ac-petal--5 { display: none; }
+
+  .ac-historia__badge {
+    right: 0.5rem;
+    bottom: -0.8rem;
+    font-size: 0.78rem;
+    padding: 0.55rem 0.9rem;
+  }
+
+  .ac-historia { padding: 4rem 0; }
+  .ac-historia__title { text-align: center; }
+  .ac-historia__cierre { margin-left: auto; margin-right: auto; }
+  .ac-historia__img-placeholder { aspect-ratio: 16 / 9; }
+
+  .ac-mv { padding: 4rem 0; }
+  .ac-valores { padding: 4rem 0; }
+  .ac-valor { padding: 1.8rem 1rem; }
+  .ac-valor__icon-wrap { width: 50px; height: 50px; font-size: 1.2rem; }
+
+  .ac-cierre { padding: 5rem 0; }
+  .ac-cierre__text { font-size: 1.5rem; }
+}
+
+@media (max-width: 575px) {
+  .ac-historia__text p { font-size: 0.97rem; }
+  .ac-mv-card { padding: 2rem 1.5rem; }
+  .ac-cierre__text { font-size: 1.35rem; }
+  .ac-cierre__sub { font-size: 0.95rem; }
+}
