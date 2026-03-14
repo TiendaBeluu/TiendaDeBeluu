@@ -4,8 +4,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tienda de Belu - Ropa, accesorios y más para tu estilo">
-  <title>Tienda de Belu | Acerca de</title>
+
+  <!-- =============================================
+       SEO BÁSICO
+       ============================================= -->
+  <title>Acerca de Tienda de Belu | Nuestra Historia en Paraguay</title>
+  <meta name="description" content="Conocé la historia de Tienda de Belu, nacida en 2023 con amor en Arroyos y Esteros, Paraguay. Ropa, accesorios y belleza con atención personalizada y envíos a todo el país.">
+  <meta name="keywords" content="acerca de Tienda de Belu, historia tienda Paraguay, moda mujer Arroyos y Esteros, tienda ropa accesorios Paraguay, Tienda de Belu misión visión">
+  <meta name="author" content="Tienda de Belu">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#e91e8c">
+
+  <!-- =============================================
+       CANONICAL URL
+       ============================================= -->
+  <link rel="canonical" href="https://www.tiendadebeluu.com.py/acerca.html">
+
+  <!-- =============================================
+       OPEN GRAPH (Facebook, WhatsApp, TikTok)
+       ============================================= -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tienda de Belu">
+  <meta property="og:title" content="Acerca de Tienda de Belu | Nuestra Historia en Paraguay">
+  <meta property="og:description" content="Conocé quiénes somos, nuestra historia y por qué somos la tienda de moda y accesorios preferida en Arroyos y Esteros, Paraguay.">
+  <meta property="og:url" content="https://www.tiendadebeluu.com.py/acerca.html">
+  <meta property="og:image" content="https://www.tiendadebeluu.com.py/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tienda de Belu - Ropa y accesorios en Paraguay">
+  <meta property="og:locale" content="es_PY">
+
+  <!-- =============================================
+       TWITTER / X CARD
+       ============================================= -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Acerca de Tienda de Belu | Nuestra Historia en Paraguay">
+  <meta name="twitter:description" content="Conocé quiénes somos y por qué somos la tienda preferida en Arroyos y Esteros, Paraguay.">
+  <meta name="twitter:image" content="https://www.tiendadebeluu.com.py/assets/img/og-image.jpg">
+
+  <!-- =============================================
+       SCHEMA MARKUP (JSON-LD) — AboutPage
+       ============================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Acerca de Tienda de Belu",
+    "description": "Conocé la historia de Tienda de Belu, nacida en 2023 con amor en Arroyos y Esteros, Paraguay. Ropa, accesorios y belleza con envíos a todo el país.",
+    "url": "https://www.tiendadebeluu.com.py/acerca.html",
+    "isPartOf": {
+      "@type": "ClothingStore",
+      "name": "Tienda de Belu",
+      "url": "https://www.tiendadebeluu.com.py",
+      "foundingDate": "2023",
+      "telephone": "+595992863948",
+      "email": "tiendadebeluu@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Mariscal López esq. Nanawa",
+        "addressLocality": "Arroyos y Esteros",
+        "addressCountry": "PY"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/17E23mWFLx/",
+        "https://www.instagram.com/tiendadebeluu",
+        "https://www.tiktok.com/@tiendadebeluu",
+        "https://wa.me/595992863948"
+      ]
+    }
+  }
+  </script>
+
+
+  <!-- =============================================
+       SCHEMA MARKUP — BreadcrumbList (Acerca de)
+       ============================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://www.tiendadebeluu.com.py/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Acerca de",
+        "item": "https://www.tiendadebeluu.com.py/acerca.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- =============================================
+       FAVICON
+       ============================================= -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -13,8 +115,11 @@
   <!-- CSS General (navbar, footer, utilidades — compartido con todas las páginas) -->
   <link rel="stylesheet" href="assets/css/general.css">
 
-  <!-- CSS específico del index -->
+  <!-- CSS específico de acerca -->
   <link rel="stylesheet" href="assets/css/style-acerca.css">
+
+  <!-- Preconnect para acelerar Font Awesome -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -25,7 +130,7 @@
        HEADER / NAVBAR
        ============================================= -->
   <header class="v2-header">
-    <nav class="navbar navbar-expand-lg v2-navbar">
+    <nav class="navbar navbar-expand-lg v2-navbar" aria-label="Navegación principal">
       <div class="container">
 
         <a class="navbar-brand" href="index.html">
@@ -267,40 +372,39 @@
   <!-- =============================================
        FOOTER
        ============================================= -->
-  <footer class="v2-footer">
+  <footer class="v2-footer" aria-label="Pie de página">
     <div class="container">
       <div class="row g-4">
 
         <!-- Col 1: Logo + Info + Redes -->
         <div class="col-md-4 col-sm-12">
-          <a href="index.html" style="display:inline-block; margin-bottom:1.2rem;">
+          <a href="index.html" style="display:inline-block; margin-bottom:1.2rem;" aria-label="Ir al inicio - Tienda de Belu">
             <img src="assets/img/logosinfondo.png" alt="Logo Tienda de Belu" class="v2-footer-logo">
           </a>
           <div>
             <h5>Tienda de Belu</h5>
             <p class="v2-footer-tagline">Moda y accesorios con estilo y calidad.</p>
             <ul class="v2-contact-list">
-              <li><i class="fa-solid fa-phone"></i><a href="tel:+595992863948">+595 992 863 948</a></li>
-              <li><i class="fa-solid fa-envelope"></i><a
-                  href="mailto:tiendadebeluu@gmail.com">tiendadebeluu@gmail.com</a></li>
-              <li><i class="fa-solid fa-clock"></i><span>Lun–Sáb: 9:00 a 18:00</span></li>
+              <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+595992863948">+595 992 863 948</a></li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:tiendadebeluu@gmail.com">tiendadebeluu@gmail.com</a></li>
+              <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Lun–Sáb: 9:00 a 18:00</span></li>
             </ul>
           </div>
           <div class="v2-footer-social">
             <a href="https://wa.me/595992863948" target="_blank" rel="noopener noreferrer"
-              class="v2-social-link v2-social-wa" aria-label="WhatsApp">
+              class="v2-social-link v2-social-wa" aria-label="Contactar por WhatsApp">
               <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
             </a>
             <a href="https://www.facebook.com/share/17E23mWFLx/?mibextid=wwXIfr" target="_blank"
-              rel="noopener noreferrer" class="v2-social-link v2-social-fb" aria-label="Facebook">
+              rel="noopener noreferrer" class="v2-social-link v2-social-fb" aria-label="Seguinos en Facebook">
               <i class="fa-brands fa-facebook-f"></i><span>Facebook</span>
             </a>
             <a href="https://www.tiktok.com/@tiendadebeluu" target="_blank" rel="noopener noreferrer"
-              class="v2-social-link v2-social-tiktok" aria-label="TikTok">
+              class="v2-social-link v2-social-tiktok" aria-label="Seguinos en TikTok">
               <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
             </a>
             <a href="https://www.instagram.com/tiendadebeluu" target="_blank" rel="noopener noreferrer"
-              class="v2-social-link v2-social-ig" aria-label="Instagram">
+              class="v2-social-link v2-social-ig" aria-label="Seguinos en Instagram">
               <i class="fa-brands fa-instagram"></i><span>Instagram</span>
             </a>
           </div>
@@ -310,25 +414,25 @@
         <div class="col-md-2 col-sm-6 col-6">
           <h5>Navegación</h5>
           <ul>
-            <li><a href="index.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Inicio</a></li>
-            <li><a href="#v2-ofrecemos"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>¿Qué Ofrecemos?</a>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right v2-footer-arrow" aria-hidden="true"></i>Inicio</a></li>
+            <li><a href="#v2-ofrecemos"><i class="fa-solid fa-chevron-right v2-footer-arrow" aria-hidden="true"></i>¿Qué Ofrecemos?</a>
             </li>
-            <li><a href="catalogo.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Catálogo</a></li>
-            <li><a href="acerca.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Acerca de</a></li>
-            <li><a href="contacto.html"><i class="fa-solid fa-chevron-right v2-footer-arrow"></i>Contacto</a></li>
+            <li><a href="catalogo.html"><i class="fa-solid fa-chevron-right v2-footer-arrow" aria-hidden="true"></i>Catálogo</a></li>
+            <li><a href="acerca.html"><i class="fa-solid fa-chevron-right v2-footer-arrow" aria-hidden="true"></i>Acerca de</a></li>
+            <li><a href="contacto.html"><i class="fa-solid fa-chevron-right v2-footer-arrow" aria-hidden="true"></i>Contacto</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Mapa -->
         <div class="col-md-6 col-sm-12">
-          <h5><i class="fa-solid fa-location-dot me-2"></i>Ubicación</h5>
-          <p class="v2-footer-address">
+          <h5><i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>Ubicación</h5>
+          <address class="v2-footer-address">
             Av. Mariscal López esq. Nanawa<br>
             Arroyos y Esteros, Paraguay
-          </p>
+          </address>
           <div class="v2-footer-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.1393252873645!2d-57.10456722585318!3d-25.055181718164622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dc300060d4255%3A0x932f2931797eb55!2sTienda%20de%20Belu!5e0!3m2!1ses!2spy!4v1772836158541!5m2!1ses!2spy"
+              title="Ubicación de Tienda de Belu en Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.1393252873645!2d-57.10456722585318!3d-25.055181718164622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dc300060d4255%3A0x932f2931797eb55!2sTienda%20de%20Belu!5e0!3m2!1ses!2spy!4v1772836158541!5m2!1ses!2spy"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -358,7 +462,7 @@
        ============================================= -->
   <a href="https://wa.me/595992863948?text=Hola%20Tienda%20Belu,%20quisiera%20hacer%20una%20consulta." target="_blank"
     rel="noopener noreferrer" class="v2-wa-float" aria-label="Contactar por WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true">
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
     </svg>
@@ -366,9 +470,8 @@
 
   <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-  <!-- JS compartido del sitio (navbar, scroll fade, hamburguesa) -->
-  <script src="assets/js/main.js"></script>
+  <!-- JS General -->
+  <script src="assets/js/main.js"></script>  
 
 </body>
 
